@@ -1,0 +1,23 @@
+{
+	"format_version": 1,
+	"imports":
+	[{
+		"target_table": "SalesAnalysis.coredb.structures::MasterData.Customers",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "SalesAnalysis.coredb.structures::Customers.csv",
+			"has_header": true
+		},
+
+		"import_settings": {
+			"import_columns": ["CustomerId","Name","City","Country"]
+		},
+
+		"column_mappings": {
+			"CustomerId": 1,
+			"Name": 2,
+			"City": 3,
+			"Country": 4
+		}
+	}]
+}

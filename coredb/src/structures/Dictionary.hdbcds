@@ -1,0 +1,10 @@
+namespace SalesAnalysis.coredb.structures;
+
+context Dictionary {
+	
+	type CustomerId  : String(12);
+	type City        : String(30);
+	type Country     : String(30);
+	type Description : String(100);
+
+};

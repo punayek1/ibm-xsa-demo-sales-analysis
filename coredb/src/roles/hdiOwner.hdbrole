@@ -1,0 +1,16 @@
+{ 
+  "role":{ 
+    "name": "SalesAnalysis.coredb.roles::masterdataAccess#",
+    
+    "schema_privileges":[
+    { 
+        "privileges_with_grant_option":[ "SELECT", "SELECT METADATA", "SELECT METADATA", "SELECT CDS METADATA", "EXECUTE" ]
+    }],
+    "object_privileges":[
+    { 
+        "name": "SalesAnalysis.coredb.structures::MasterData.Customers", 
+        "type": "TABLE",
+        "privileges_with_grant_option": [ "SELECT" ] 
+    }]
+  } 
+}

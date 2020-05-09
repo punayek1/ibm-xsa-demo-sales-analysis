@@ -1,0 +1,14 @@
+namespace SalesAnalysis.coredb.structures;
+
+using SalesAnalysis.coredb.structures::Dictionary as Dictionary;
+
+context MasterData {
+	
+	entity  Customers { 
+		key CustomerId   : Dictionary.CustomerId; 
+			Name         : Dictionary.Description;
+			City		 : Dictionary.City;
+			Country      : Dictionary.Country;
+	}; 
+
+};
