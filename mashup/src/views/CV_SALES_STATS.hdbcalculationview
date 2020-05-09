@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SalesAnalysis.mashup.views::CV_SALES_STATS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_SALES_STATS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SalesAnalysis.mashup.views::CV_VBAK">
+    <resourceUri>SalesAnalysis.mashup.views::CV_VBAK</resourceUri>
+  </DataSource>
+  <DataSource id="SalesAnalysis.mashup.views::CV_KNA1">
+    <resourceUri>SalesAnalysis.mashup.views::CV_KNA1</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VBAK">
+    <viewAttributes>
+      <viewAttribute id="SalesOrder">
+        <descriptions defaultDescription="Sales Order"/>
+      </viewAttribute>
+      <viewAttribute id="CreatedOn">
+        <descriptions defaultDescription="Created On"/>
+      </viewAttribute>
+      <viewAttribute id="SalesOrg">
+        <descriptions defaultDescription="Sales Organization"/>
+      </viewAttribute>
+      <viewAttribute id="DocumentType">
+        <descriptions defaultDescription="Document Type"/>
+      </viewAttribute>
+      <viewAttribute id="SoltToParty">
+        <descriptions defaultDescription="Solt to Party"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="SalesAnalysis.mashup.views::CV_VBAK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrder" source="SalesOrder"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CreatedOn" source="CreatedOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrg" source="SalesOrg"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentType" source="DocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SoltToParty" source="SoltToParty"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="KNA1">
+    <viewAttributes>
+      <viewAttribute id="CustomerId">
+        <descriptions defaultDescription="CustomerId"/>
+      </viewAttribute>
+      <viewAttribute id="Name">
+        <descriptions defaultDescription="Name"/>
+      </viewAttribute>
+      <viewAttribute id="City">
+        <descriptions defaultDescription="City"/>
+      </viewAttribute>
+      <viewAttribute id="Country">
+        <descriptions defaultDescription="Country"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="SalesAnalysis.mashup.views::CV_KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerId" source="CustomerId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Country" source="Country"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="STATS" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="SalesOrder">
+        <descriptions defaultDescription="Sales Order"/>
+      </viewAttribute>
+      <viewAttribute id="CreatedOn">
+        <descriptions defaultDescription="Created On"/>
+      </viewAttribute>
+      <viewAttribute id="SalesOrg">
+        <descriptions defaultDescription="Sales Organization"/>
+      </viewAttribute>
+      <viewAttribute id="DocumentType">
+        <descriptions defaultDescription="Document Type"/>
+      </viewAttribute>
+      <viewAttribute id="SoltToParty">
+        <descriptions defaultDescription="Solt to Party"/>
+      </viewAttribute>
+      <viewAttribute id="Name">
+        <descriptions defaultDescription="Name"/>
+      </viewAttribute>
+      <viewAttribute id="City">
+        <descriptions defaultDescription="City"/>
+      </viewAttribute>
+      <viewAttribute id="Country">
+        <descriptions defaultDescription="Country"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="VBAK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrder" source="SalesOrder"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CreatedOn" source="CreatedOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrg" source="SalesOrg"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentType" source="DocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SoltToParty" source="SoltToParty"/>
+    </input>
+    <input node="KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Country" source="Country"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SoltToParty" source="CustomerId"/>
+    </input>
+    <joinAttribute name="SoltToParty"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="STATS">
+  <attributes>
+    <attribute id="SalesOrder" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Order"/>
+      <keyMapping columnObjectName="STATS" columnName="SalesOrder"/>
+    </attribute>
+    <attribute id="CreatedOn" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Created On"/>
+      <keyMapping columnObjectName="STATS" columnName="CreatedOn"/>
+    </attribute>
+    <attribute id="SalesOrg" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Organization"/>
+      <keyMapping columnObjectName="STATS" columnName="SalesOrg"/>
+    </attribute>
+    <attribute id="DocumentType" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Type"/>
+      <keyMapping columnObjectName="STATS" columnName="DocumentType"/>
+    </attribute>
+    <attribute id="SoldToParty" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sold to Party"/>
+      <keyMapping columnObjectName="STATS" columnName="SoltToParty"/>
+    </attribute>
+    <attribute id="Name" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name"/>
+      <keyMapping columnObjectName="STATS" columnName="Name"/>
+    </attribute>
+    <attribute id="City" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="STATS" columnName="City"/>
+    </attribute>
+    <attribute id="Country" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country"/>
+      <keyMapping columnObjectName="STATS" columnName="Country"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures>
+    <measure id="COUNT_SALESORDER" order="9" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="INTEGER" length="">
+      <descriptions defaultDescription="COUNT_SALESORDER"/>
+      <exceptionAggregation>
+        <attribute attributeName="SalesOrder"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VBAK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="KNA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="STATS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VBAK" modelObjectNameSpace="STATS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="KNA1" modelObjectNameSpace="STATS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

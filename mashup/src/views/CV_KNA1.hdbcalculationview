@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SalesAnalysis.mashup.views::CV_KNA1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" runWithInvokerPrivileges="true">
+<descriptions defaultDescription="CV_KNA1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SalesAnalysis.mashup.cfg::Customers">
+    <resourceUri>SalesAnalysis.mashup.cfg::Customers</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Customers">
+    <viewAttributes>
+      <viewAttribute id="CustomerId">
+        <descriptions defaultDescription="CustomerId"/>
+      </viewAttribute>
+      <viewAttribute id="Name">
+        <descriptions defaultDescription="Name"/>
+      </viewAttribute>
+      <viewAttribute id="City">
+        <descriptions defaultDescription="City"/>
+      </viewAttribute>
+      <viewAttribute id="Country">
+        <descriptions defaultDescription="Country"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="SalesAnalysis.mashup.cfg::Customers">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerId" source="CustomerId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Country" source="Country"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Customers">
+  <attributes>
+    <attribute id="CustomerId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerId"/>
+      <keyMapping columnObjectName="Customers" columnName="CustomerId"/>
+    </attribute>
+    <attribute id="Name" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name"/>
+      <keyMapping columnObjectName="Customers" columnName="Name"/>
+    </attribute>
+    <attribute id="City" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="Customers" columnName="City"/>
+    </attribute>
+    <attribute id="Country" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country"/>
+      <keyMapping columnObjectName="Customers" columnName="Country"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Customers" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

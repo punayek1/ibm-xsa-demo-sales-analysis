@@ -1,0 +1,16 @@
+{ 
+  "role":{ 
+    "name": "SalesAnalysis.mashup.roles::mashupAccess#",
+    
+    "schema_privileges":[
+    { 
+        "privileges_with_grant_option":[ "SELECT", "SELECT METADATA", "SELECT METADATA", "SELECT CDS METADATA", "EXECUTE" ]
+    }],
+    "object_privileges":[
+    { 
+        "name": "SalesAnalysis.mashup.views::CV_SALES_STATS", 
+        "type": "VIEW",
+        "privileges_with_grant_option": [ "SELECT" ] 
+    }]
+  } 
+}

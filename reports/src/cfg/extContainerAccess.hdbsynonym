@@ -1,0 +1,9 @@
+{
+  "SalesAnalysis.reports.cfg::CV_SALES_STATS": {
+    "target": {
+      "object": "SalesAnalysis.mashup.views::CV_SALES_STATS",
+      "schema": "SALESANALYSIS_HDI_MASHUP_1",
+      "database": "HDB"
+    }
+  }
+}

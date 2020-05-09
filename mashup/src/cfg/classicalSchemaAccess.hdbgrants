@@ -1,0 +1,14 @@
+{
+  "classical_schema_access": {
+    "object_owner": {
+      "roles": [
+        "CLASSIC_DB_ACCESS"
+      ]
+    }, 
+    "application_user": {
+      "roles": [
+        "CLASSIC_DB_ACCESS"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mashup_service": {
+    "object_owner" : {
+      "container_roles": [ "SalesAnalysis.mashup.roles::mashupAccess#" ]
+    },
+    "application_user" : {
+      "container_roles": [ "SalesAnalysis.mashup.roles::mashupAccess" ]
+    }
+  }
+}

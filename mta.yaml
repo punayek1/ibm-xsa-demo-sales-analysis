@@ -9,8 +9,94 @@ modules:
    requires:
     - name: hdi_coredb
 
+
+ - name: mashup
+   type: hdb
+   path: mashup
+   requires:
+    - name: hdi_mashup
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name_2}
+
+
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: coredb_service
+        service: ~{the-service-name}
+                          
+
+
+
+    - name: cross-container-service-2
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: classical_schema_access
+        service: ~{the-service-name}
+                          
+
+
+
+ - name: reports
+   type: hdb
+   path: reports
+   requires:
+    - name: hdi_reports
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name_3}
+
+
+
+    - name: cross-container-service-3
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: mashup_service
+        service: ~{the-service-name}
+                          
+
+
 resources:
  - name: hdi_coredb
    properties:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container
+
+ - name: hdi_mashup
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
+
+ - name: cross-container-service-1
+   parameters:
+      service-name: PUNAYEK1-xplot4fa8f8s81bj-SalesAnalysis-hdi_coredb
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+
+
+ - name: cross-container-service-2
+   parameters:
+      service-name: SCHEMA_ACCESS_SERVICE
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+
+
+ - name: hdi_reports
+   properties:
+      hdi-container-name_3: ${service-name}
+   type: com.sap.xs.hdi-container
+
+
+ - name: cross-container-service-3
+   parameters:
+      service-name: PUNAYEK1-xplot4fa8f8s81bj-SalesAnalysis-hdi_mashup
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+

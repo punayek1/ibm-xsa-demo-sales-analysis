@@ -1,0 +1,8 @@
+{
+  "SalesAnalysis.mashup.cfg::VBAK": {
+    "target": {
+      "object": "VBAK",
+      "schema": "CLASSIC_DB"
+    }
+  }
+}

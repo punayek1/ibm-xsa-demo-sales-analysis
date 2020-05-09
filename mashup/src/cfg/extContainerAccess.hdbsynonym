@@ -1,0 +1,9 @@
+{
+  "SalesAnalysis.mashup.cfg::Customers": {
+    "target": {
+      "object": "SalesAnalysis.coredb.structures::MasterData.Customers",
+      "schema": "SALESANALYSIS_HDI_COREDB_1",
+      "database": "HDB"
+    }
+  }
+}

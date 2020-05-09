@@ -1,0 +1,10 @@
+{
+  "coredb_service": {
+    "object_owner" : {
+      "container_roles": [ "SalesAnalysis.coredb.roles::masterdataAccess#" ]
+    },
+    "application_user" : {
+      "container_roles": [ "SalesAnalysis.coredb.roles::masterdataAccess" ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SalesAnalysis.mashup.views::CV_VBAK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" runWithInvokerPrivileges="true">
+<descriptions defaultDescription="CV_VBAK"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SalesAnalysis.mashup.cfg::VBAK">
+    <resourceUri>SalesAnalysis.mashup.cfg::VBAK</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VBAK">
+    <viewAttributes>
+      <viewAttribute id="SalesOrder">
+        <descriptions defaultDescription="Sales Order"/>
+      </viewAttribute>
+      <viewAttribute id="CreatedOn">
+        <descriptions defaultDescription="Created On"/>
+      </viewAttribute>
+      <viewAttribute id="SalesOrg">
+        <descriptions defaultDescription="Sales Organization"/>
+      </viewAttribute>
+      <viewAttribute id="DocumentType">
+        <descriptions defaultDescription="Document Type"/>
+      </viewAttribute>
+      <viewAttribute id="SoltToParty">
+        <descriptions defaultDescription="Solt to Party"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="SalesAnalysis.mashup.cfg::VBAK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrder" source="SalesOrder"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CreatedOn" source="CreatedOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrg" source="SalesOrg"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentType" source="DocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SoltToParty" source="SoltToParty"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="VBAK">
+  <attributes>
+    <attribute id="SalesOrder" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Order"/>
+      <keyMapping columnObjectName="VBAK" columnName="SalesOrder"/>
+    </attribute>
+    <attribute id="CreatedOn" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Created On"/>
+      <keyMapping columnObjectName="VBAK" columnName="CreatedOn"/>
+    </attribute>
+    <attribute id="SalesOrg" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Organization"/>
+      <keyMapping columnObjectName="VBAK" columnName="SalesOrg"/>
+    </attribute>
+    <attribute id="DocumentType" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Type"/>
+      <keyMapping columnObjectName="VBAK" columnName="DocumentType"/>
+    </attribute>
+    <attribute id="SoltToParty" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sold to Party"/>
+      <keyMapping columnObjectName="VBAK" columnName="SoltToParty"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VBAK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
