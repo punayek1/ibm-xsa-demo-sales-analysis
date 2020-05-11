@@ -22,3 +22,6 @@ For external access, default_access_role has been created. Access granted by thi
 
 
 Here is the [reference!](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/9235c9dd8dbf410f915ffe305296a032.html)
+
+## unique schema name options
+Reference [link](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/221aeeced301403d8913fc1a4ee31434.html)
