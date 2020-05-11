@@ -18,3 +18,7 @@ For usage of classic schema objects, steps to be followed are,
 
 ## reports module
 Reference was created to mashup module and views are reused in this model to create new models.
+For external access, default_access_role has been created. Access granted by this role will be available as part of global role "&lt;HDI Schema name&gt;::access_role"
+
+
+Here is the [reference!](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/9235c9dd8dbf410f915ffe305296a032.html)
