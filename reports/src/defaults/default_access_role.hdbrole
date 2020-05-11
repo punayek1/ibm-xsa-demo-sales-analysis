@@ -1,0 +1,16 @@
+{ 
+  "role":{ 
+    "name": "default_access_role",
+    
+    "schema_privileges":[
+    { 
+        "privileges":[ "SELECT", "SELECT METADATA", "SELECT METADATA", "SELECT CDS METADATA" ]
+    }],
+    "object_privileges":[
+    {
+        "name": "SalesAnalysis.reports.views::CV_SALES_STATISTICS",
+        "type": "VIEW", 
+        "privileges": [ "SELECT" ]
+    }]
+  } 
+}
