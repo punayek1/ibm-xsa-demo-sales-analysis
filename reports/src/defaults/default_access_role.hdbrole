@@ -1,8 +1,8 @@
 { 
-  "role":{ 
+  "role":{
     "name": "default_access_role",
-    "schema_privileges":[
-    { 
+    "schema_privileges": [
+    {
         "privileges":[ "SELECT", "SELECT METADATA", "SELECT METADATA", "SELECT CDS METADATA" ]
     }],
     "object_privileges":[
